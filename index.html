@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Photo Carousel</title>
+    <script>
+      class PhotoCarousel extends HTMLElement {
+        connectedCallback() {}
+      }
+
+      if (
+        !customElements.get(
+          // NOT - ! (!TRUE) = FALSE
+          "xmundo-photo-carousel"
+        )
+      ) {
+        customElements.define("xmundo-photo-carousel", PhotoCarousel);
+      }
+    </script>
+  </head>
+  <body>
+    <xmundo-photo-carousel title="???" subtitle="???" photosSrc="???">
+    </xmundo-photo-carousel>
+  </body>
+</html>
