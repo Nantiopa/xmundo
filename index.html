@@ -3,7 +3,13 @@
     <title>Photo Carousel</title>
     <script>
       class PhotoCarousel extends HTMLElement {
-        connectedCallback() {}
+        connectedCallback() {
+          this.innerHTML = '<h4>'+ this.getAttribute('title') + '</h4>' +
+        '<small> '+ this.getAttribute('subtitle') + '</small>' +
+        '<div class="image-container"></div>' +
+        '<button class="back">&lt</button>' +
+        '<button class="forward">&gt</button>';
+        }
       }
 
       if (
@@ -17,7 +23,8 @@
     </script>
   </head>
   <body>
-    <xmundo-photo-carousel title="???" subtitle="???" photosSrc="???">
-    </xmundo-photo-carousel>
+    <xmundo-photo-carousel title="KonfigurationNaTytl" subtitle="KonfiguracjaNaSub" photosSrc="./">
+    </xmundo-photo-carousel> 
+  
   </body>
 </html>
