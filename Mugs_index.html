@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filling Cups with Liquids</title>
+    <style>
+      /* Styles for the cups and liquids */
+      .cup {
+        width: 100px;
+        height: 150px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        display: inline-block;
+        margin: 20px;
+        position: relative;
+        vertical-align: top;
+      }
+      .liquid {
+        width: 100%;
+        height: 0;
+        transition: height 0.5s;
+      }
+      .liquid.coffee {
+        background-color: #964b00; /* brown liquid */
+      }
+      .liquid.tea {
+        background-color: #34c759; /* green liquid */
+      }
+      .liquid.juice {
+        background-color: #ff69b4; /* pink liquid */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Filling Cups with Liquids</h1>
+    <div class="cup">
+      <div class="liquid" id="liquid1"></div>
+      <select id="select1">
+        <option value="coffee">Coffee</option>
+        <option value="tea">Tea</option>
+        <option value="juice">Juice</option>
+      </select>
+      <button onclick="fillCup(1)">Fill Cup</button>
+      <button onclick="emptyCup(1)">Empty Cup</button>
+    </div>
+    <div class="cup">
+      <div class="liquid" id="liquid2"></div>
+      <select id="select2">
+        <option value="coffee">Coffee</option>
+        <option value="tea">Tea</option>
+        <option value="juice">Juice</option>
+      </select>
+      <button onclick="fillCup(2)">Fill Cup</button>
+      <button onclick="emptyCup(2)">Empty Cup</button>
+    </div>
+
+    <script>
+      let liquidHeight1 = 0;
+      let liquidHeight2 = 0;
+      let maxCapacity = 80; // 80% of the cup's height
+
+      function fillCup(cupNumber) {
+        const liquidElement = document.getElementById(`liquid${cupNumber}`);
+        const selectElement = document.getElementById(`select${cupNumber}`);
+        const liquidType = selectElement.value;
+        liquidElement.classList.add(liquidType);
+        if (cupNumber === 1) {
+          if (liquidHeight1 + 20 <= maxCapacity) {
+            liquidHeight1 += 20;
+            liquidElement.style.height = `${liquidHeight1}%`;
+          } else {
+            alert("Liquid is spilling!");
+          }
+        } else {
+          if (liquidHeight2 + 20 <= maxCapacity) {
+            liquidHeight2 += 20;
+            liquidElement.style.height = `${liquidHeight2}%`;
+          } else {
+            alert("Liquid is spilling!");
+          }
+        }
+      }
+
+      function emptyCup(cupNumber) {
+        const liquidElement = document.getElementById(`liquid${cupNumber}`);
+        liquidElement.style.height = "0%";
+        liquidElement.className = "liquid"; // remove any liquid type class
+        if (cupNumber === 1) {
+          liquidHeight1 = 0; // reset liquid height to 0
+        } else {
+          liquidHeight2 = 0; // reset liquid height to 0
+        }
+      }
+    </script>
+  </body>
+</html>
