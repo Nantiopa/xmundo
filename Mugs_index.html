@@ -70,14 +70,14 @@
             liquidHeight1 += 20;
             liquidElement.style.height = `${liquidHeight1}%`;
           } else {
-            alert("Liquid is spilling!");
+            console.log("Liquid is spilling!");
           }
         } else {
           if (liquidHeight2 + 20 <= maxCapacity) {
             liquidHeight2 += 20;
             liquidElement.style.height = `${liquidHeight2}%`;
           } else {
-            alert("Liquid is spilling!");
+            console.log("Liquid is spilling!");
           }
         }
       }
