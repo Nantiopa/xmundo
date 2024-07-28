@@ -7,32 +7,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <h1>Filling Cups with Liquids</h1>
+    <h1 class="h1">Filling Cups with Liquids</h1>
+
     <div class="cup">
       <div class="liquid" id="liquid1"></div>
+    </div>
+    <div>
       <select id="select1">
         <option value="coffee">Coffee</option>
         <option value="tea">Tea</option>
         <option value="juice">Juice</option>
       </select>
-      <button onclick="fillCup(1)">Fill Cup</button>
-      <button onclick="emptyCup(1)">Empty Cup</button>
     </div>
+    <div><button class="button" onclick="fillCup(1)">Fill Cup</button></div>
+    <div><button class="button" onclick="emptyCup(1)">Empty Cup</button></div>
+
     <div class="cup">
       <div class="liquid" id="liquid2"></div>
+    </div>
+    <div>
       <select id="select2">
         <option value="coffee">Coffee</option>
         <option value="tea">Tea</option>
         <option value="juice">Juice</option>
       </select>
-      <button onclick="fillCup(2)">Fill Cup</button>
-      <button onclick="emptyCup(2)">Empty Cup</button>
     </div>
+    <div><button class="button" onclick="fillCup(2)">Fill Cup</button></div>
+    <div><button class="button" onclick="emptyCup(2)">Empty Cup</button></div>
+
+    <div class="cup">
+      <div class="liquid" id="liquid3"></div>
+    </div>
+
+    <div>
+      <select id="select3">
+        <option value="coffee">Coffee</option>
+        <option value="tea">Tea</option>
+        <option value="juice">Juice</option>
+      </select>
+    </div>
+    <div><button class="button" onclick="fillCup(3)">Fill Cup</button></div>
+    <div><button class="button" onclick="emptyCup(3)">Empty Cup</button></div>
 
     <script>
       let liquidHeight1 = 0;
       let liquidHeight2 = 0;
-      let maxCapacity = 80; // 80% of the cup's height
+      let maxCapacity = 90; // 90% of the cup's height
 
       function fillCup(cupNumber) {
         const liquidElement = document.getElementById(`liquid${cupNumber}`);
